@@ -1,10 +1,10 @@
-<div class="buffer-right-10">
+<div class="buffer-right-10" id=<%= category.id %> >
   <div class="card border-info mb-3 static-size">
     <div class="card-header">
       <%= link_to category.name.truncate(16), category_path(category), class: 'text-primary', title: t(:category_title) %>
 
       <%= link_to category_path(category), method: :delete, class: 'text-dark float-right buffer-left-8',
-                  title: t(:delete), remote: true do %>
+                  title: t(:delete) do %>
           <i class="fa fa-trash-o" aria-hidden="true"></i>
       <% end %>
 

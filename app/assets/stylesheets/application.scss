@@ -50,3 +50,11 @@ body {
   width: 14rem;
   height: 11rem;
 }
+
+.alert-alert {
+  @extend .alert-danger;
+}
+
+.alert-notice {
+  @extend .alert-success;
+}
