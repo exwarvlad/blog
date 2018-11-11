@@ -36,3 +36,4 @@ en:
   delete: 'delete'
   success_create: 'Category is successfully create'
   success_destroy: 'Category is successfully destroy'
+  success_update: 'Category is successfully update'

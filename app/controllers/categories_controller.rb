@@ -30,7 +30,7 @@ class CategoriesController < ApplicationController
   def update
     respond_to do |f|
       if @category.update(category_params)
-        flash.now.notice = 'Expense was successfully destroyed.'
+        flash.now.notice = t(:success_update)
         f.js
       end
     end
