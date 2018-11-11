@@ -1,0 +1,18 @@
+<h1>Post categories list</h1>
+<%= link_to 'New Category', new_category_path, class: 'btn btn-outline-success', remote: true %>
+<br> <br>
+
+<% if @categories.empty? %>
+    <p><%= t(:categories_empty) %></p>
+<% else %>
+
+      <div class="row">
+        <div class="container flex-container">
+        <%= render partial: 'category', collection: @categories %>
+        </div>
+        <div id="pagination" class="container">
+          <%= paginate @categories.page(params[:page]), page: @categories.page.current_page, theme: 'twitter-bootstrap-4', pagination_class: 'pagination-sm' %>
+        </div>
+      </div>
+
+<% end %>

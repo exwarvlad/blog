@@ -1,0 +1,21 @@
+<div class="buffer-right-10">
+  <div class="card border-info mb-3 static-size">
+    <div class="card-header">
+      <%= link_to category.name.truncate(16), category_path(category), class: 'text-primary', title: t(:category_title) %>
+
+      <%= link_to category_path(category), method: :delete, class: 'text-dark float-right buffer-left-8',
+                  title: t(:delete), remote: true do %>
+          <i class="fa fa-trash-o" aria-hidden="true"></i>
+      <% end %>
+
+      <%= link_to edit_category_path(category), class: 'text-dark float-right', title: t(:edit), remote: true do %>
+          <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+      <% end %>
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">Description</h5>
+      <p class="card-text"><%= category.description.truncate(40) %></p>
+    </div>
+  </div>
+</div>
+
