@@ -1,6 +1,6 @@
 class CategoriesController < ApplicationController
   before_action :set_categories, only: [:index, :create, :update]
-  before_action :set_category, except: [:index, :show, :new, :create]
+  before_action :set_category, only: [:edit, :update, :destroy]
 
   def index
   end
@@ -17,6 +17,8 @@ class CategoriesController < ApplicationController
     respond_to do |f|
       if @category.save
         f.html { redirect_to root_path, notice: t(:success_create) }
+      else
+        f.html { redirect_to root_path, alert: t(:error_create) }
       end
     end
   end
@@ -30,8 +32,9 @@ class CategoriesController < ApplicationController
   def update
     respond_to do |f|
       if @category.update(category_params)
-        flash.now.notice = t(:success_update)
-        f.js
+        f.html { redirect_to root_path, notice: t(:success_update) }
+      else
+        f.html { redirect_to root_path, alert: t(:error_update) }
       end
     end
   end

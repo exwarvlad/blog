@@ -16,8 +16,8 @@ ActiveRecord::Schema.define(version: 2018_11_10_123316) do
   enable_extension "plpgsql"
 
   create_table "categories", force: :cascade do |t|
-    t.string "name"
-    t.string "description", null: false
+    t.string "name", null: false
+    t.string "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["name"], name: "index_categories_on_name", unique: true
