@@ -31,6 +31,7 @@
 
 en:
   categories_empty: 'Categories is empty. Be the first to create a category :)'
+  posts_empty: 'Posts is empty. Be the first to create a post :)'
   category_title: 'Show this category'
   edit: 'edit'
   delete: 'delete'

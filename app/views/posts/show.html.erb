@@ -1,0 +1,13 @@
+<p id="notice"><%= notice %></p>
+
+<h3><%= link_to "Categories << ", root_path %>
+  <%= link_to 'Posts <<', category_path(@post.category_id) %>
+  <%= "#{@post.name}" %>
+</h3>
+
+
+<% if @post.content.empty? %>
+  <p>—</p>
+<% else %>
+  <p><%= @post.content %></p>
+<% end %>

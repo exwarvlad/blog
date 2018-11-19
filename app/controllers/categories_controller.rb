@@ -1,6 +1,6 @@
 class CategoriesController < ApplicationController
   before_action :set_categories, only: [:index, :create, :update]
-  before_action :set_category, only: [:edit, :update, :destroy]
+  before_action :set_category, only: [:edit, :update, :destroy, :show]
 
   def index
   end
@@ -21,6 +21,10 @@ class CategoriesController < ApplicationController
         f.html { redirect_to root_path, alert: t(:error_create) }
       end
     end
+  end
+
+  def show
+    @posts = @category.posts.order(created_at: :desc)
   end
 
   def edit

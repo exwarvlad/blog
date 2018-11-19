@@ -15,10 +15,10 @@
     <div class="card-body">
       <h5 class="card-title">Description</h5>
       <% if category.description.nil? %>
-          <p class="card-text"><%= category.description.truncate(40) %></p>
-      <% else %>
-          <p class="card-text"><span>—</span></p>
-      <% end %>
+        <p class="card-text"><span>—</span></p>
+    <% else %>
+        <p class="card-text"><%= category.description.truncate(40) %></p>
+    <% end %>
     </div>
   </div>
 </div>

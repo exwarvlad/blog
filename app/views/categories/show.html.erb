@@ -1,0 +1,21 @@
+<div id="myModal"></div>
+<div class="notice"></div>
+
+<h3><%= link_to "Categories << ", root_path %> <%= "#{@category.name}" %> Posts</h3>
+<%= link_to 'New Post', new_category_post_path(@category), class: 'btn btn-outline-success', remote: true %>
+<br> <br>
+
+<% if @posts.empty? %>
+  <p><%= t(:posts_empty) %></p>
+<% else %>
+
+  <div class="row">
+    <div class="container flex-container">
+      <%= render partial: 'posts/post', collection: @posts %>
+    </div>
+    <div id="pagination" class="container">
+      <%= paginate @posts.page(params[:page]), page: @posts.page.current_page, theme: 'twitter-bootstrap-4', pagination_class: 'pagination-sm' %>
+    </div>
+  </div>
+
+<% end %>
