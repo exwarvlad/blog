@@ -42,7 +42,6 @@ gem 'i18n'
 gem 'bootstrap', '~> 4.0.0'
 gem 'bootstrap4-kaminari-views'
 gem 'jquery-rails'
-gem 'font-awesome-rails'
 gem 'client_side_validations'
 
 group :development, :test do

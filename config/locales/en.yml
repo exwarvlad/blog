@@ -41,5 +41,9 @@ en:
   error_create: 'Category is not created :('
   error_update: 'Category is not updated :('
 
+  send_comment: 'Send'
+  area_description: 'Comment...'
+  select_author: 'Your name'
+
   # validates
   errors: 'Errors'

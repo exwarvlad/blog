@@ -76,8 +76,6 @@ GEM
     ffi (1.9.25)
     figaro (1.1.1)
       thor (~> 0.14)
-    font-awesome-rails (4.7.0.4)
-      railties (>= 3.2, < 6.0)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
     i18n (1.1.0)
@@ -213,7 +211,6 @@ DEPENDENCIES
   client_side_validations
   coffee-rails (~> 4.2)
   figaro
-  font-awesome-rails
   i18n
   jbuilder (~> 2.5)
   jquery-rails

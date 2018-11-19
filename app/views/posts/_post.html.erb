@@ -5,11 +5,11 @@
 
       <%= link_to category_post_path(@category, post), method: :delete, class: 'text-dark float-right buffer-left-8',
                   title: t(:delete) do %>
-        <i class="fa fa-trash-o" aria-hidden="true"></i>
+        <i class="fas fa-trash"></i>
       <% end %>
 
       <%= link_to edit_category_post_path(@category, post), class: 'text-dark float-right', title: t(:edit), remote: true do %>
-        <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+        <i class="fas fa-edit"></i>
       <% end %>
     </div>
     <div class="card-body">
