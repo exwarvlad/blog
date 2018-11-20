@@ -1,5 +1,6 @@
 class Post < ApplicationRecord
   belongs_to :category
+  has_many :comments, as: :commentable
   paginates_per 8
 
   CONTENT_MAX_SIZE = 255

@@ -25,6 +25,7 @@ class CategoriesController < ApplicationController
 
   def show
     @posts = @category.posts.order(created_at: :desc)
+    @comments = @category.comments.order(created_at: :desc)
   end
 
   def edit

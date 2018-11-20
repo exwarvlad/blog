@@ -2,7 +2,7 @@
 
 <div class="row">
   <div class="col-md-4">
-    <%= form_with(model: @comment, local: true) do |form| %>
+    <%= form_for([*commentable, Comment.new], local: true, method: :post) do |form| %>
       <div class="inner-addon left-addon buffer-bot-5">
         <span>
         <i class="glyphicon fas fa-user-ninja" aria-hidden="true"></i>
@@ -11,7 +11,7 @@
       </div>
 
       <div class="field buffer-bot-5">
-        <%= form.text_area :create, class: 'area-row form-control', placeholder: t(:area_description) %>
+        <%= form.text_area :content, class: 'area-row form-control', placeholder: t(:area_description) %>
       </div>
 
       <div class="actions">
@@ -20,3 +20,5 @@
     <% end %>
   </div>
 </div>
+
+<%= render partial: 'comments/comment', collection: @comments %>
