@@ -11,5 +11,12 @@ class Post < ApplicationRecord
   validates :name, presence: true, length: { maximum: NAME_MAX_SIZE }
   validates :content, length: { in: 0..255 }
   validate :format_name
+  validate :file_size_validation
   before_save :capitalization_name
+
+  private
+
+  def file_size_validation
+    errors[:avatar] << "should be less than 5MB" if file.size > 2.megabytes
+  end
 end
