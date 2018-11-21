@@ -17,6 +17,6 @@ class Post < ApplicationRecord
   private
 
   def file_size_validation
-    errors[:avatar] << "should be less than 5MB" if file.size > 2.megabytes
+    errors[:file] << "should be less than 5MB" if file.size > 2.megabytes
   end
 end
