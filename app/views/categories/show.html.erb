@@ -21,3 +21,28 @@
 <% end %>
 
 <%= render partial: 'comments/form', locals: {commentable: @category} %>
+
+<div id="comments-list">
+  <%= render partial: 'comments/comment', collection: @comments %>
+</div>
+
+
+<script>
+    var channel = pusher.subscribe('comments-channel-' + 'category-' + '<%= @category.id %>');
+    channel.bind('new-comment', function(data) {
+        let author = data.author;
+        let created_at = data.created_at;
+        let content = data.content;
+        $('#comments-list').prepend(`<hr>
+<section class="comment-list">
+
+            <header class="text-left">
+            <div class="comment-user"><i class="fas fa-user-ninja"></i> ${author}</div>
+            <time class="comment-date"><i class="fa fa-clock-o"></i> ${created_at}</time>
+            </header>
+            <div class="comment-post">
+            <p>${content}</p>
+            </div>
+            </section>`);
+    });
+</script>

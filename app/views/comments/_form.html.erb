@@ -2,7 +2,7 @@
 
 <div class="row">
   <div class="col-md-4">
-    <%= form_for([*commentable, Comment.new], local: true, method: :post) do |form| %>
+    <%= form_for([*commentable, Comment.new], local: true, method: :post, remote: true) do |form| %>
       <div class="inner-addon left-addon buffer-bot-5">
         <span>
         <i class="glyphicon fas fa-user-ninja" aria-hidden="true"></i>
@@ -20,5 +20,3 @@
     <% end %>
   </div>
 </div>
-
-<%= render partial: 'comments/comment', collection: @comments %>

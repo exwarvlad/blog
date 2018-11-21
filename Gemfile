@@ -43,6 +43,7 @@ gem 'bootstrap', '~> 4.0.0'
 gem 'bootstrap4-kaminari-views'
 gem 'jquery-rails'
 gem 'client_side_validations'
+gem 'pusher'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

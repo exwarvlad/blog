@@ -6,6 +6,12 @@ class CommentsController < ApplicationController
 
     respond_to do |format|
       if @comment.save
+        channel = "comments-channel-#{@comment.commentable_type.downcase}-#{@comment.commentable_id}"
+        Pusher.trigger(channel, 'new-comment', {
+            author: @comment.author,
+            created_at: @comment.created_at.strftime('%b %d, %Y'),
+            content: @comment.content
+        })
         format.html { redirect_to @commentable_redirect, notice: 'Comment was successfully created.' }
       else
         format.html { redirect_to @commentable_redirect, alert: 'Comment not created.' }
