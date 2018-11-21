@@ -1,7 +1,9 @@
 class Post < ApplicationRecord
   belongs_to :category
   has_many :comments, as: :commentable
+
   paginates_per 8
+  mount_uploader :file, FileUploader
 
   NAME_MAX_SIZE = 42
   CONTENT_MAX_SIZE = 255
