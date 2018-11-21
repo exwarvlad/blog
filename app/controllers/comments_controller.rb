@@ -12,9 +12,10 @@ class CommentsController < ApplicationController
             created_at: @comment.created_at.strftime('%b %d, %Y'),
             content: @comment.content
         })
-        format.html { redirect_to @commentable_redirect, notice: 'Comment was successfully created.' }
+        format.html { redirect_to @commentable_redirect, notice: t(:comment_success_create) }
       else
-        format.html { redirect_to @commentable_redirect, alert: 'Comment not created.' }
+        format.js { render template: 'comments/alert_comment_save' }
+        format.html { redirect_to @commentable_redirect, alert: t(:error_comment_create) }
       end
     end
   end

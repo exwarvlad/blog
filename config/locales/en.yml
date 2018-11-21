@@ -44,6 +44,8 @@ en:
   send_comment: 'Send'
   area_description: 'Comment...'
   select_author: 'Your name'
+  comment_success_create: 'Comment is successfully create'
+  error_comment_create: 'Comment have unless values'
 
   # validates
   errors: 'Errors'

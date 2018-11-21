@@ -7,11 +7,13 @@
         <span>
         <i class="glyphicon fas fa-user-ninja" aria-hidden="true"></i>
         </span>
-        <%= form.text_field :author, class: 'author-width form-control', placeholder: t(:select_author) %>
+        <%= form.text_field :author, class: 'author-width form-control', placeholder: t(:select_author),
+                            maxlength: Comment::MAX_AUTHOR_SIZE %>
       </div>
 
       <div class="field buffer-bot-5">
-        <%= form.text_area :content, class: 'area-row form-control', placeholder: t(:area_description) %>
+        <%= form.text_area :content, class: 'area-row form-control', placeholder: t(:area_description),
+                           maxlength: Comment::MAX_CONTENT_SIZE %>
       </div>
 
       <div class="actions">

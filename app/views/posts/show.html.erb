@@ -21,6 +21,7 @@
 <script>
     var channel = pusher.subscribe('comments-channel-' + 'post-' + '<%= @post.id %>');
     channel.bind('new-comment', function(data) {
+        console.log(42);
         let author = data.author;
         let created_at = data.created_at;
         let content = data.content;

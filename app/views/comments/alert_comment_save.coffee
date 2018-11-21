@@ -1,0 +1,1 @@
+alert '<%= t(:error_comment_create) %>'

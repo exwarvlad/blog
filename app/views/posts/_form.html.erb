@@ -13,7 +13,7 @@
             <div class="form-group row">
               <%= form.label :name, class: 'col-sm-3 col-form-label' %>
               <div class="col-sm-9">
-                <%= form.text_field :name, class: 'form-control' %>
+                <%= form.text_field :name, class: 'form-control', maxlength: Category::NAME_MAX_SIZE %>
               </div>
             </div>
 
