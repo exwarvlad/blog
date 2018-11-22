@@ -1,6 +1,6 @@
 class Comment < ApplicationRecord
-  belongs_to :category, polymorphic: true
-  belongs_to :post, polymorphic: true
+  belongs_to :category, polymorphic: true, optional: true
+  belongs_to :post, polymorphic: true, optional: true
 
   MAX_AUTHOR_SIZE = 42
   MAX_CONTENT_SIZE = 255

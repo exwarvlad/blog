@@ -4,7 +4,6 @@ class CommentsController < ApplicationController
   def create
     @comment = @commentable.comments.new(comment_params)
 
-    byebug
     respond_to do |format|
       if @comment.save
         channel = "comments-channel-#{@comment.commentable_type.downcase}-#{@comment.commentable_id}"

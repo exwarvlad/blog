@@ -41,6 +41,7 @@ en:
   error_create: 'Category is not created :('
   error_update: 'Category is not updated :('
 
+  post_title: 'Show this post'
   post_success_create: 'Post was successfully created'
   post_success_update: 'Post was successfully update'
   post_success_destroy: 'Post was successfully destroyed'
