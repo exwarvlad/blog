@@ -53,5 +53,8 @@ en:
   comment_success_create: 'Comment is successfully create'
   error_comment_create: 'Comment have unless values'
 
+  file: 'File'
+  current_file: 'Post file'
+
   # validates
   errors: 'Errors'

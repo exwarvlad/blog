@@ -5,11 +5,14 @@
   <%= "#{@post.name}" %>
 </h3>
 
-
 <% if @post.content.empty? %>
   <p>—</p>
 <% else %>
   <p><%= @post.content %></p>
+<% end %>
+
+<% if @post.file.present? %>
+  <%= link_to t(:file), @post.file.url, target: '_blank' %>
 <% end %>
 
 <%= render partial: 'comments/form', locals: {commentable: [@post.category, @post]} %>

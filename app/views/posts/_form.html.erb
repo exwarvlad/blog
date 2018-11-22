@@ -1,4 +1,4 @@
-<%= form_for(@post, local: true, url: { action: check_action }) do |form| %>
+<%= form_for(@post, local: true, url: {action: check_action}) do |form| %>
   <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
@@ -24,8 +24,17 @@
               </div>
             </div>
 
+            <% if @post.file.present? %>
+              <div class="form-group row">
+                <%= form.label t(:current_file), class: 'col-sm-3 col-form-label' %>
+                <div class="col-sm-9 buffer-top">
+                  <%= link_to t(:file), @post.file.url, target: '_blank', id: 'current_file' %>
+                </div>
+              </div>
+            <% end %>
+
             <div class="form-group row">
-              <%= form.file_field :file, class: 'col-sm-6 col-form-label' %>
+              <%= form.file_field :file, value: 'asd', class: 'col-sm-6 col-form-label' %>
             </div>
 
           </div>
