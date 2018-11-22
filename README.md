@@ -1,24 +1,47 @@
-# README
+# Блог  
+https://thetestappblog.herokuapp.com
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Описание
+Тестовое приложение, сделанно специально, для [MassMedia Group](https://massmediagroup.pro/)  
 
-Things you may want to cover:
+Приложение использует гем `pusher`, для создания каналов на комментируемых страницах, что бы обеспечить создание
+ комментариев в реальном времени  
+ 
+Файлы постов хранятся на облачном хранилище Amazon S3  
+Связь с хранилищем происходит через гем `fog-aws`  
 
-* Ruby version
+Категории и посты разбиты на страницы. Не более 8 на каждой с помощью гема `kaminari`    
+В данной версии комментарии создаются простынёй без пагинации :(  
 
-* System dependencies
+## Как развернуть
 
-* Configuration
+Вам потребуется добавить такие переменные окружения:  
 
-* Database creation
+[Pusher](https://pusher.com)  
 
-* Database initialization
+```yaml
+pusher_app_id
+pusher_key
+pusher_secret
+pusher_cluster
+```
 
-* How to run the test suite
+[Amazon S3](https://aws.amazon.com/s3/)
 
-* Services (job queues, cache servers, search engines, etc.)
+```yaml
+S3_ACCESS_KEY
+S3_SECRET_KEY
+S3_BUCKET_NAME
+```
 
-* Deployment instructions
+PostgreSQL
 
-* ...
+```yaml
+username
+password
+database
+```
+
+Создать базу данных `rails db:create`  
+Накатить миграции `rails db:migrate`  
+Создать тестовые категории и посты `rails db:seed`
