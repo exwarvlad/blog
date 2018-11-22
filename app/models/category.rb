@@ -1,6 +1,6 @@
 class Category < ApplicationRecord
-  has_many :posts
-  has_many :comments, as: :commentable
+  has_many :posts, dependent: :destroy
+  has_many :comments, as: :commentable, dependent: :destroy
 
   paginates_per 8
   NAME_MAX_SIZE = 255

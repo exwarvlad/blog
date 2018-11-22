@@ -5,3 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+10.times do |index|
+  category = Category.create(name: "Годный контент_#{index + 1}", description: "Топ #{index + 1}")
+  Post.create(name: "Дневник хача #{index + 1}", category_id: category.id, content: '')
+end

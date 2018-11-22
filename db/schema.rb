@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 2018_11_19_114108) do
   enable_extension "plpgsql"
 
   create_table "categories", force: :cascade do |t|
-    t.string "name", null: false
+    t.string "name"
     t.string "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 2018_11_19_114108) do
   end
 
   create_table "posts", force: :cascade do |t|
-    t.string "name", null: false
+    t.string "name"
     t.string "content"
     t.string "file"
     t.bigint "category_id"
