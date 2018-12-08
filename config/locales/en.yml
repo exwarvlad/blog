@@ -48,6 +48,9 @@ en:
   error_post_update: 'Post is not updated :('
   error_post_create: 'Post is not created :('
 
+  category_mistake_destroy: 'Category is not destroy :('
+  post_mistake_destroy: 'Post is not destroy :('
+
   send_comment: 'Send'
   area_description: 'Comment...'
   select_author: 'Your name'

@@ -1,25 +1,22 @@
 class CategoriesController < ApplicationController
-  before_action :set_categories, only: [:index, :create, :update]
-  before_action :set_category, only: [:edit, :update, :destroy, :show]
+  before_action :set_categories, only: %i[index create update]
+  before_action :set_category, only: %i[edit update destroy show]
 
   def index
   end
 
   def new
     @category = Category.new
-    respond_to do |f|
-      f.js { render template: 'categories/modal' }
-    end
+    render template: 'categories/modal'
   end
 
   def create
     @category = Category.new(category_params)
-    respond_to do |f|
-      if @category.save
-        f.html { redirect_to root_path, notice: t(:success_create) }
-      else
-        f.html { redirect_to root_path, alert: t(:error_create) }
-      end
+
+    if @category.save
+      redirect_to root_path, notice: t(:success_create)
+    else
+      redirect_to root_path, alert: t(:error_create)
     end
   end
 
@@ -29,25 +26,22 @@ class CategoriesController < ApplicationController
   end
 
   def edit
-    respond_to do |f|
-      f.js { render template: 'categories/modal' }
-    end
+    render template: 'categories/modal'
   end
 
   def update
-    respond_to do |f|
-      if @category.update(category_params)
-        f.html { redirect_to root_path, notice: t(:success_update) }
-      else
-        f.html { redirect_to root_path, alert: t(:error_update) }
-      end
+    if @category.update(category_params)
+      redirect_to root_path, notice: t(:success_update)
+    else
+      redirect_to root_path, alert: t(:error_update)
     end
   end
 
   def destroy
-    @category.destroy
-    respond_to do |f|
-      f.html { redirect_to root_path, notice: t(:success_destroy) }
+    if @category.destroy
+      redirect_to root_path, notice: t(:success_destroy)
+    else
+      redirect_to root_path, alert: t(:category_mistake_destroy)
     end
   end
 
