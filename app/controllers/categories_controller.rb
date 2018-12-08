@@ -24,8 +24,8 @@ class CategoriesController < ApplicationController
   end
 
   def show
-    @posts = @category.posts.page(params[:page]).order(created_at: :desc)
-    @comments = @category.comments.page(params[:page]).order(created_at: :desc)
+    @posts = @category.posts.page(params[:page])
+    @comments = @category.comments
   end
 
   def edit
@@ -58,7 +58,7 @@ class CategoriesController < ApplicationController
   end
 
   def set_categories
-    @categories = Category.page(params[:page]).order(created_at: :desc)
+    @categories = Category.page(params[:page])
   end
 
   def set_category
